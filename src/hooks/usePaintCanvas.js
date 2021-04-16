@@ -52,6 +52,7 @@ export const usePaintCanvas = (brushConfig) => {
    */
 
   useBrush(canvas, context);
+
   const actions = useCanvasActions(canvas, context);
 
   /**
