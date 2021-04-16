@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import { DEFAULT_BRUSH } from "../const";
 
 export const useToolbar = () => {

@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useBrush } from "./useBrush";
 import { useCanvasActions } from "./useCanvasActions";
+
 import { DEFAULT_BRUSH } from "../const";
 
 export const usePaintCanvas = (brushConfig) => {
