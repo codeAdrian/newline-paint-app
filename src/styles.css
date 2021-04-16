@@ -7,3 +7,18 @@ html {
 *:after {
   box-sizing: inherit;
 }
+
+aside {
+  padding: 1em 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+aside > * {
+  margin: 0 0.5em;
+}
+
+aside input[type="radio"] {
+  margin-right: 0.2em;
+}

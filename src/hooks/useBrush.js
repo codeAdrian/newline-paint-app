@@ -1,11 +1,9 @@
 import { useRef, useEffect, useCallback } from "react";
-import { DEFAULT_BRUSH } from "../const";
 
-export const useBrush = (canvas) => {
+export const useBrush = (canvas, context) => {
   /**
    * SETUP
    */
-  const context = useRef();
   const isDrawing = useRef(false);
   const previousCoordinates = useRef([0, 0]);
 
@@ -13,16 +11,19 @@ export const useBrush = (canvas) => {
    * FUNCTION DEFINITIONS
    */
 
-  const drawLine = (e) => {
-    if (!context.current) {
-      return;
-    }
+  const drawLine = useCallback(
+    (e) => {
+      if (!context.current) {
+        return;
+      }
 
-    context.current.beginPath();
-    context.current.moveTo(...previousCoordinates.current);
-    context.current.lineTo(e.offsetX, e.offsetY);
-    context.current.stroke();
-  };
+      context.current.beginPath();
+      context.current.moveTo(...previousCoordinates.current);
+      context.current.lineTo(e.offsetX, e.offsetY);
+      context.current.stroke();
+    },
+    [context]
+  );
 
   const updateCoordinates = (e) => {
     previousCoordinates.current = [e.offsetX, e.offsetY];
@@ -32,11 +33,14 @@ export const useBrush = (canvas) => {
    * EVENT HANDLERS
    */
 
-  const drawMove = useCallback((e) => {
-    if (!isDrawing.current || !context?.current) return;
-    drawLine(e);
-    updateCoordinates(e);
-  }, []);
+  const drawMove = useCallback(
+    (e) => {
+      if (!isDrawing.current || !context?.current) return;
+      drawLine(e);
+      updateCoordinates(e);
+    },
+    [context, drawLine]
+  );
 
   const drawStart = useCallback((e) => {
     isDrawing.current = true;
@@ -50,14 +54,6 @@ export const useBrush = (canvas) => {
   /**
    * SIDE-EFFECTS
    */
-
-  useEffect(() => {
-    if (!canvas.current) {
-      return;
-    }
-    context.current = canvas.current.getContext("2d");
-    Object.assign(context.current, DEFAULT_BRUSH);
-  }, [canvas]);
 
   useEffect(() => {
     const ref = canvas.current;
