@@ -1,6 +1,7 @@
 html {
   box-sizing: border-box;
   font-family: "Arial", sans-serif;
+  font-size: 14px;
 }
 
 *,
@@ -14,7 +15,7 @@ aside {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #bece;
+  background-color: #efefef;
 }
 
 aside > * {
@@ -23,4 +24,9 @@ aside > * {
 
 aside input[type="radio"] {
   margin-right: 0.2em;
+}
+
+button {
+  padding: 0 1em;
+  cursor: pointer;
 }

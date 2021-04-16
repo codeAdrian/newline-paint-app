@@ -46,7 +46,7 @@ export const Toolbar = ({
         defaultValue={DEFAULT_BRUSH.lineWidth}
       />
 
-      <a download="image.png" onClick={handleCanvasDownload} href={dataUrl}>
+      <a download="image.png" onMouseDown={handleCanvasDownload} href={dataUrl}>
         Save Image
       </a>
 
