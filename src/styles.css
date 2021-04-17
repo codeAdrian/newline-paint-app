@@ -1,0 +1,38 @@
+html {
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+  font-size: 14px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+aside {
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #efefef;
+}
+
+aside > * {
+  margin: 0 0.75em;
+}
+
+aside input[type="radio"] {
+  margin-right: 0.2em;
+}
+
+button {
+  padding: 0 1em;
+  cursor: pointer;
+}
+
+input,
+label,
+a {
+  cursor: pointer;
+}
