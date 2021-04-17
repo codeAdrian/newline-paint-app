@@ -1,7 +1,7 @@
 export const DEFAULT_BRUSH = Object.freeze({
-  strokeStyle: "#000000",
   lineJoin: "round",
   lineCap: "round",
+  strokeStyle: "#000000",
   lineWidth: 10,
   globalCompositeOperation: "source-over",
 });

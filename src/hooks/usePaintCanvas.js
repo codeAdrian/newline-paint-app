@@ -8,6 +8,7 @@ export const usePaintCanvas = (brushConfig) => {
   /**
    * SETUP
    */
+
   const context = useRef();
   const canvas = useRef();
 

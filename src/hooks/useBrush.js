@@ -4,6 +4,7 @@ export const useBrush = (canvas, context) => {
   /**
    * SETUP
    */
+
   const isDrawing = useRef(false);
   const previousCoordinates = useRef([0, 0]);
 
@@ -35,7 +36,10 @@ export const useBrush = (canvas, context) => {
 
   const drawMove = useCallback(
     (e) => {
-      if (!isDrawing.current || !context?.current) return;
+      if (!isDrawing.current || !context?.current) {
+        return;
+      }
+
       drawLine(e);
       updateCoordinates(e);
     },

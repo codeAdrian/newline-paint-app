@@ -10,6 +10,7 @@ export const useCanvasActions = (canvas, context) => {
   /**
    * EVENT HANDLERS
    */
+
   const handleCanvasDownload = () => {
     if (!canvas.current) {
       return;
